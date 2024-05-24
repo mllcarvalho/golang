@@ -16,9 +16,9 @@ type Client struct {
 	Endereco
 }
 
-func (c *Client) DesativarCliente() {
+func (c *Client) DesativarCliente() string {
 	c.Active = false
-	fmt.Println("Cliente desativado")
+	return "Cliente desativado"
 }
 
 func main() {
@@ -35,8 +35,9 @@ func main() {
 		},
 	}
 
-	matheus.DesativarCliente()
+	retorno := matheus.DesativarCliente()
 
+	fmt.Println(retorno)
 	fmt.Println(matheus.Active)
 
 }
