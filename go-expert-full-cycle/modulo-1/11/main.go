@@ -29,7 +29,7 @@ func main() {
 		Active: true,
 		Endereco: Endereco{
 			Logradouro: "Rua dos Bobos",
-			Numero:     0,
+			Numero:     50,
 			Cidade:     "São Paulo",
 			Estado:     "SP",
 		},
