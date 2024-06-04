@@ -12,7 +12,7 @@ import (
 
 const (
 	serverURL     = "http://localhost:8080/cotacao"
-	clientTimeout = 1 * time.Millisecond
+	clientTimeout = 300 * time.Millisecond
 )
 
 func main() {
