@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -11,6 +9,7 @@ type Product struct {
 	ID    int `gorm:"primary_key"`
 	Name  string
 	Price float64
+	gorm.Model
 }
 
 func main() {
@@ -21,7 +20,10 @@ func main() {
 	}
 	db.AutoMigrate(&Product{})
 
-	// db.Create(&Product{Name: "Produto 1", Price: 10})
+	// db.Create(&Product{
+	// 	Name:  "Produto 1",
+	// 	Price: 10,
+	// })
 
 	// //create batch
 	// products := []Product{
@@ -32,7 +34,7 @@ func main() {
 	// db.Create(&products)
 
 	// var Product Product
-	// db.First(&Product, 1)
+	// db.First(&Product, 8)
 	// fmt.Println(Product)
 	// db.First(&Product, "name = ?", "Produto 4")
 	// fmt.Println(Product)
@@ -55,14 +57,14 @@ func main() {
 	// 	fmt.Println(product)
 	// }
 
-	var product Product
-	db.First(&product, 1)
-	product.Name = "Produto New"
-	db.Save(&product)
+	// var product Product
+	// db.First(&product, 8)
+	// product.Name = "Produto New"
+	// db.Save(&product)
 
-	var product2 Product
-	db.First(&product2, 1)
-	fmt.Println(product2)
-	db.Delete(&product2)
+	// var product2 Product
+	// db.First(&product2, 8)
+	// fmt.Println(product2)
+	// db.Delete(&product2)
 
 }
